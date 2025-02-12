@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín</title>
+    <style>
+        body {
+            background: url('fondo-romantico.jpg');
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .no-btn {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Quieres ser mi San Valentín?</h1>
+    <button class="btn" onclick="mostrarCarta()">Sí</button>
+    <button class="btn no-btn" onmouseover="moverBoton()">No</button>
+    <div id="carta" style="display:none;">
+        <h2>¡Gracias por decir que sí!</h2>
+        <p>Aquí tienes una carta especial para ti...</p>
+        <a href="carta-romantica.jpg" download="Carta_Romantica.jpg">Descargar Carta</a>
+    </div>
+
+    <script>
+        function mostrarCarta() {
+            document.getElementById('carta').style.display = 'block';
+        }
+        function moverBoton() {
+            const btn = document.querySelector('.no-btn');
+            btn.style.position = 'absolute';
+            btn.style.left = Math.random() * window.innerWidth + 'px';
+            btn.style.top = Math.random() * window.innerHeight + 'px';
+        }
+    </script>
+</body>
+</html>
